@@ -16,7 +16,7 @@
 
 # テスト結果
 
-[![Build Status](https://travis-ci.org/p156/03_list.svg?branch=master)](https://travis-ci.org/p156/03_list)
+[![Build Status](https://travis-ci.org/p156-2018/03_list.svg?branch=master)](https://travis-ci.org/p156-2018/03_list)
 
 # 今回の問題
 
