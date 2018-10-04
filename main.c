@@ -6,9 +6,10 @@ int main(int argc, char *argv[])
     int array[100];
     int index  = 0;
     
-    while(fgets(str, sizeof(str), stdin)){
-        printf("%s", str);*/
-    }
+    while(fgets(str, sizeof(str), stdin))
+    {
+        printf("%s", str);
+    }*/
 
     return 0;
 }
