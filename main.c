@@ -86,7 +86,7 @@ int delList(struct cell **foot)
 {
     struct cell *prev = NULL;
     
-    printf("%d", *foot -> data);
+    printf("%d", foot -> data);
     prev = (*foot) -> next;
     free(*foot);
     *foot = prev;   
