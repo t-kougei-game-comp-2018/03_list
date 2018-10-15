@@ -12,7 +12,7 @@ struct cell
 struct cell *NewList(int data);
 int AddList(struct cell *head, int data);
 int DelList(struct cell **foot);
-void ShowList(struct cell *foot):
+void ShowList(struct cell *foot);
 
 int main(int argc, char *argv[]) 
 {
