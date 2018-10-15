@@ -35,18 +35,20 @@ int AddList(struct cell **foot, int data)
     else
     {      
         *foot = prev;
-        return 0;
     }    
+    return 0;
 }
 
 int DelList(struct cell **foot)
 {
     struct cell *prev = NULL;
     
-    printf("%d", foot -> data);
+    printf("%d", *foot -> data);
     prev = (*foot) -> next;
     free(*foot);
     *foot = prev;   
+    
+    return 0;
 }
 
 void ShowList(struct cell *foot)
