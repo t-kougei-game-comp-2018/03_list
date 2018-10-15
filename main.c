@@ -7,7 +7,7 @@ struct cell
     struct cell *prev;
     struct cell *next;
     int data;
-}
+};
 
 struct cell *NewList(int data);
 int AddList(struct cell *head, int data);
