@@ -101,8 +101,3 @@ void ShowList(cell *foot)
         }
     }
 }
-    
-    
-    
-    
-    
