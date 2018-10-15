@@ -40,10 +40,10 @@ int main(int argc, char *argv[])
                 showlist(list);
                 break;
             case -1:
-                DelList(list);
+                DelList(&list);
                 break;
             default:
-                AddList(list);
+                AddList(&list);
                 break;
         }              
     }
