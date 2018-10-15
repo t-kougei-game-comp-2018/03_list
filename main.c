@@ -9,13 +9,13 @@ struct cell
     int data;
 };
 
-struct cell *NewList(int data, struct cell *next);
+struct cell *newList(int data, struct cell *next);
 
-int AddList(struct cell **foot, int data);
+int addList(struct cell **foot, int data);
 
-int DelList(struct cell **foot);
+int delList(struct cell **foot);
 
-void ShowList(struct cell *foot);
+void showList(struct cell *foot);
 
 int main(int argc, char *argv[]) 
 {
@@ -37,13 +37,13 @@ int main(int argc, char *argv[])
         switch (data)
         {
             case 0:
-                showlist(list);
+                showList(list);
                 break;
             case -1:
-                DelList(&list);
+                delList(&list);
                 break;
             default:
-                AddList(&list);
+                addList(&list);
                 break;
         }              
     }
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-struct cell *NewList(int data, struct cell *next)
+struct cell *newList(int data, struct cell *next)
 {
     struct cell *new = NULL;
     
@@ -68,11 +68,11 @@ struct cell *NewList(int data, struct cell *next)
     }
 }
 
-int AddList(struct cell **foot, int data)
+int addList(struct cell **foot, int data)
 {
     struct cell *prev = NULL;
     
-    prev = NewList(data, *foot);
+    prev = newList(data, *foot);
     if(prev == NULL)
         return (-1);
     else
@@ -82,7 +82,7 @@ int AddList(struct cell **foot, int data)
     return 0;
 }
 
-int DelList(struct cell **foot)
+int delList(struct cell **foot)
 {
     struct cell *prev = NULL;
     
@@ -94,7 +94,7 @@ int DelList(struct cell **foot)
     return 0;
 }
 
-void ShowList(struct cell *foot)
+void showList(struct cell *foot)
 {
     while(foot != NULL)
     {
