@@ -9,17 +9,17 @@ struct cell
     int data;
 }
 
-cell *NewList(int data);
-int AddList(cell *head, int data);
-int DelList(cell **foot);
-void ShowList(cell *foot):
+struct cell *NewList(int data);
+int AddList(struct cell *head, int data);
+int DelList(struct cell **foot);
+void ShowList(struct cell *foot):
 
 int main(int argc, char *argv[]) 
 {
     int data;
     char str[5];
     FILE *stdin;
-    cell *list = NULL;
+    struct cell *list = NULL;
    
     stdin = fopen("input1.txt","r"); 
     if(stdin == NULL)
@@ -49,11 +49,11 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-cell *NewList(int data, cell *next)
+struct cell *NewList(int data, struct cell *next)
 {
-    cell *new = NULL;
+    struct cell *new = NULL;
     
-    new = malloc(sizeof(cell));
+    new = malloc(sizeof(struct cell));
     if(new == NULL)
     {
         return(NULL);
@@ -65,9 +65,9 @@ cell *NewList(int data, cell *next)
     }
 }
 
-int AddList(cell **foot, int data)
+int AddList(struct cell **foot, int data)
 {
-    cell *prev = NULL;
+    struct cell *prev = NULL;
     
     prev = NewList(data, *foot);
     if(prev == NULL)
@@ -79,9 +79,9 @@ int AddList(cell **foot, int data)
     }    
 }
 
-int DelList(cell **foot)
+int DelList(struct cell **foot)
 {
-    cell *prev = NULL;
+    struct cell *prev = NULL;
     
     printf("%d", foot -> data);
     prev = (*foot) -> next;
@@ -89,7 +89,7 @@ int DelList(cell **foot)
     *foot = prev;   
 }
 
-void ShowList(cell *foot)
+void ShowList(struct cell *foot)
 {
     while(foot != NULL)
     {
