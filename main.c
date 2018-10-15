@@ -9,6 +9,49 @@ struct cell
     int data;
 };
 
+struct cell *NewList(int data, struct cell *next);
+
+int AddList(struct cell **foot, int data);
+
+int DelList(struct cell **foot);
+
+void ShowList(struct cell *foot);
+
+int main(int argc, char *argv[]) 
+{
+    int data;
+    char str[5];
+    FILE *stdin;
+    struct cell *list = NULL;
+   
+    stdin = fopen("input1.txt","r"); 
+    if(stdin == NULL)
+    {
+        printf("ファイル読み込みに失敗しました。\n");        
+        return -1;
+    }
+    
+    while(fgets(str, sizeof(str), stdin))
+    {
+        data = atoi(str);
+        switch (data)
+        {
+            case 0:
+                showlist(list);
+                break;
+            case -1:
+                DelList(list);
+                break;
+            default:
+                AddList(list);
+                break;
+        }              
+    }
+
+    fclose(stdin);
+    return 0;
+}
+
 struct cell *NewList(int data, struct cell *next)
 {
     struct cell *new = NULL;
@@ -63,40 +106,3 @@ void ShowList(struct cell *foot)
         }
     }
 }
-
-
-int main(int argc, char *argv[]) 
-{
-    int data;
-    char str[5];
-    FILE *stdin;
-    struct cell *list = NULL;
-   
-    stdin = fopen("input1.txt","r"); 
-    if(stdin == NULL)
-    {
-        printf("ファイル読み込みに失敗しました。\n");        
-        return -1;
-    }
-    
-    while(fgets(str, sizeof(str), stdin))
-    {
-        data = atoi(str);
-        switch (data)
-        {
-            case 0:
-                showlist(list);
-                break;
-            case -1:
-                DelList(list);
-                break;
-            default:
-                AddList(list);
-                break;
-        }              
-    }
-
-    fclose(stdin);
-    return 0;
-}
-
