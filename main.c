@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
                 delList(&list);
                 break;
             default:
-                addList(&list);
+                addList(&list, data);
                 break;
         }              
     }
