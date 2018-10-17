@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int main(int argc,cher*argv[])
+int main(int argc,cher *argv[])
 {
 char str[5];
 int array[100];
