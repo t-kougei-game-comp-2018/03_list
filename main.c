@@ -2,26 +2,27 @@
 
 int main(int argc, char *argv[]) 
 {
-    int str[100],i=0,count=0;
-    
-    while(1){
-        scanf("%d",&str[i]);
-        i++;
-        count++;
-        if(str[i]==0)
-            break;
-        else if(str[i]==-1)
-            break;
-    }
-    if(str[i]==-1){
-        for(i=0;i<count-1;i++){
-            printf("%d",str[i]);
+    char str[5];
+    int array[100];
+    int index=0,i;
+  while(fgets(str,sizeof(str),stdin)){
+      int n=atoi(str);
+        if(1<=n){
+            array[index]=n;
+            index++;
         }
+        else if(n==0){
+            for(i=0;i<index;i++){
+            printf("%d",array[i]);
+            }
+            printf("¥n");
+    }
+    else{
+        printf("%d¥n",array[index-1]);
+        index--;
     }
     
-    else{
-        printf("%d",str[i]);
-    }
+  }
 
     return 0;
 }
