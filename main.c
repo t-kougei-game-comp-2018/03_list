@@ -16,10 +16,10 @@ else if(n==0){
     for(i=index-1;i>=0;i--){
         printf("%d,",array[i]);
     }
-    printf("¥n");
+    printf("\n");
 }
     else{
-        printf("%d¥n",array[index-1]);
+        printf("%d\n",array[index-1]);
         index--;
     }
     
