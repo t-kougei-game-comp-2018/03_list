@@ -19,7 +19,7 @@ else if(n==0){
     printf("\n");
 }
     else{
-        printf("%d\n"array[index-1]);
+        printf("%d\n",array[index-1]);
         index--;
     }
     
