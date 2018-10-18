@@ -2,7 +2,7 @@
 #include<stdlib.h>
 int main(int argc,char *argv[])
 {
-char str[5];
+char str[100];
 int array[100];
 int index=0,i;
 while(fgets(str,sizeof(str),stdin)){
