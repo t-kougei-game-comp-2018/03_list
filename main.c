@@ -21,7 +21,7 @@ else if(n==0){
     }
     printf("\n");
 }
-    else{
+    else if(n==-1){
         printf("%d\n",array[index-1]);
         index--;
     }
