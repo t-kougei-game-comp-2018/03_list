@@ -14,7 +14,10 @@ index++;
     
 else if(n==0){
     for(i=index-1;i>=0;i--){
-        printf("%d,",array[i]);
+        printf("%d",array[i]);
+        if(i>0){
+            printf(",");
+        }
     }
     printf("\n");
 }
