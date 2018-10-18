@@ -13,7 +13,7 @@ index++;
 }
     
 else if(n==0){
-    for(i=0;i<index;i++){
+    for(i=index-1;i>=0;i--){
         printf("%d",array[i]);
     }
     printf("\n");
