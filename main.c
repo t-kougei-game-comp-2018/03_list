@@ -26,6 +26,6 @@ else if(n==0){
         index--;
     }
     
-}
+ }
     return 0;
 }
