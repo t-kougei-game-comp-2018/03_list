@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
         
         if(input > 0 && i == 0)
         {
-            array[i] = input;
+            array[0] = input;
             i++;
         }
         else if(input > 0 && i > 0)
