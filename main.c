@@ -4,20 +4,21 @@ int main(int argc, char *argv[])
 {
     char str[5];
     char a[100];
-    int i=0,j;
+    int i=0,j,x;
     
     while(fgets(str, sizeof(str), stdin)){
-        if(str>0){
+        x=atoi(str)
+        if(x>0){
             a[i]=str;
             i++;
         }
-        if(str==0){
+        if(x==0){
             printf("%c",a[i-1]);
             for(j=i-2;j>0;j--)
                 printf(",%c",a[j]);
             printf("\n");
         }
-        if(str==-1){
+        if(x==-1){
             printf("%c\n",a[i-1]);
             i--;
         }
