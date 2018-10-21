@@ -12,10 +12,15 @@ int main(int argc, char *argv[])
             i++;
         }
         if(str==0){
-            for(j=0;j<i)
-        if(str==0)
-        printf("%s", str);
+            printf("%c",a[i-1]);
+            for(j=i-2;j>0;j--)
+                printf(",%c",a[j]);
+            printf("\n");
+        }
+        if(str==-1){
+            printf("%c\n",a[i-1]);
+            i--;
+        }
     }
-
     return 0;
 }
