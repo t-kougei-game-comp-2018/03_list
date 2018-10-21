@@ -96,10 +96,11 @@ int delList(struct cell **foot)
 
 void showList(struct cell *foot)
 {
-    foot = foot -> next;
+    int dt;
     while(foot != NULL)
     {
-        printf("%d", foot -> data);
+        dt = foot -> data;
+        printf("%d", dt);
         foot = foot -> next;
         if(foot != NULL)
         {
