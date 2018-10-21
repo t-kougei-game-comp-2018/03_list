@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
                     printf(",");
                 }
             }
+            printf("\n");
         }
         else if(input == -1)
         {
@@ -45,6 +46,7 @@ int main(int argc, char *argv[])
             }
             
             i--;
+            printf("\n");
         }
     }
 
