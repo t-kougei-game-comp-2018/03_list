@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
         }
         else if(input > 0 && i > 0)
         {
-            for(j = i - 1; j > 0; j--)
+            for(j = i - 1; j >= 0; j--)
             {
                 array[j] = array[j - 1];
             }
