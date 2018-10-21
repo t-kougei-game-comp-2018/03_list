@@ -65,6 +65,7 @@ struct cell *newList(int data, struct cell *next)
     {
         new -> next = next;
         new -> data = data;
+        return new;
     }
 }
 
