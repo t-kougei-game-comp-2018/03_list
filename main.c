@@ -71,23 +71,22 @@ struct cell *newList(int data, struct cell *next)
 
 int addList(struct cell **foot, int data)
 {
-    struct cell *prev = NULL;
+    struct cell *prev;
     
     prev = newList(data, *foot);
     if(prev == NULL)
         return (-1);
-    else
-    {      
-        *foot = prev;
-    }    
+    
+    *foot = prev;
+       
     return 0;
 }
 
 int delList(struct cell **foot)
 {
-    struct cell *prev = NULL;
+    struct cell *prev;
     
-    //printf("%d", foot -> data);
+    printf("%d", foot -> data);
     prev = (*foot) -> next;
     free(*foot);
     *foot = prev;   
