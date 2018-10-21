@@ -94,13 +94,14 @@ int delList(struct cell **foot)
     return 0;
 }
 
-void showList(struct cell **foot)
+void showList(struct cell *foot)
 {
-    while(*foot != NULL)
+    foot = foot -> next;
+    while(foot != NULL)
     {
-        printf("%d", *foot -> data);
-        *foot = *foot -> next;
-        if(*foot != NULL)
+        printf("%d", foot -> data);
+        foot = foot -> next;
+        if(foot != NULL)
         {
             printf(",");
         }
