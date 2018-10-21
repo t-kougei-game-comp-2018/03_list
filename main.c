@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     while(fgets(str, sizeof(str), stdin)){
         int input = atoi(str);
         
-        if(input > 0 && i = 0)
+        if(input > 0 && i == 0)
         {
             array[i] = input;
             i++;
