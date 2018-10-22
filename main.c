@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
         }
         if(x==0){
             printf("%d",a[i-1]);
-            for(j=i-2;j>0;j--)
+            for(j=i-2;j>=0;j--)
                 printf(",%d",a[j]);
             printf("\n");
         }
