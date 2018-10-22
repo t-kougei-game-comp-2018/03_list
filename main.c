@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
         else if(x==0){
             for(j=i-1;j>=0;j--){
                 printf("%d",a[j]);
-                if(i>0)
+                if(j>0)
                     printf(",");
             }
             printf("\n");
