@@ -11,9 +11,11 @@ int main(int argc, char *argv[])
             i++;
         }
         else if(x==0){
-            printf("%d",a[i-1]);
-            for(j=i-2;j>=0;j--)
-                printf(",%d",a[j]);
+            for(j=i-1;j>=0;j--){
+                printf("%d",a[j]);
+                if(i>0)
+                    printf(",");
+            }
             printf("\n");
         }
         else if(x==-1){
