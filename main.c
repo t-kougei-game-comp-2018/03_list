@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main(int argc,char *argv[])
 {
-    char str[5];
+    char str[100];
     int i=0,j,a[100],x;
     while(fgets(str,sizeof(str),stdin)){
         x=atoi(str);
