@@ -10,13 +10,13 @@ int main(int argc, char *argv[])
             a[i]=x;
             i++;
         }
-        if(x==0){
+        else if(x==0){
             printf("%d",a[i-1]);
             for(j=i-2;j>=0;j--)
                 printf(",%d",a[j]);
             printf("\n");
         }
-        if(x==-1){
+        else if(x==-1){
             printf("%d\n",a[i-1]);
             i--;
         }
