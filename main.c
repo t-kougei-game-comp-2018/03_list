@@ -1,27 +1,61 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main(int argc, char *argv[]) 
+#include<stdlib.h>
+
+int main(int argc,char *argv[])
+
 {
-    char str[5]; 
-    int i=0,j,x,a[100];
-    while(fgets(str, sizeof(str), stdin)){
-        x=atoi(str);
-        if(x>0){
-            a[i]=x;
-            i++;
+
+char str[100];
+
+int array[100];
+
+int index=0,i;
+
+while(fgets(str,sizeof(str),stdin)){
+
+int n=atoi(str);
+
+if(1<=n){
+
+array[index]=n;
+
+index++;
+
+}
+
+    
+
+else if(n==0){
+
+    for(i=index-1;i>=0;i--){
+
+        printf("%d",array[i]);
+
+        if(i>0){
+
+            printf(",");
+
         }
-        else if(x==0){
-            for(j=i-1;j>=0;j--){
-                printf("%d",a[j]);
-                if(j>0)
-                    printf(",");
-            }
-            printf("\n");
-        }
-        else if(x==-1){
-            printf("%d\n",a[i-1]);
-            i--;
-        }
+
     }
+
+    printf("\n");
+
+}
+
+    else if(n==-1){
+
+        printf("%d\n",array[index-1]);
+
+        index--;
+
+    }
+
+    
+
+ }
+
     return 0;
+
 }
