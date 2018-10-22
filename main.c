@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
         }
         if(x==-1){
             printf("%c\n",a[i-1]);
+            a[i-1]=
             i--;
         }
     }
