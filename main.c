@@ -88,11 +88,9 @@ int delList(struct cell **foot)
 
 void showList(struct cell *foot)
 {
-    int dt;
     while(foot != NULL)
-    {
-        dt = foot -> data;
-        printf("%d", dt);
+    {     
+        printf("%d", foot -> data);
         foot = foot -> next;
         if(foot != NULL)
         {
