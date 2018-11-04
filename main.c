@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
 {
     int data;
     char str[5];
-    FILE *stdin;
     struct cell *list = NULL;
     
     while(fgets(str, sizeof(str), stdin))
