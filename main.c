@@ -49,7 +49,7 @@ struct cell *newList(int data, struct cell *next)
 {
     struct cell *newcell = NULL;
     
-    newcell = (cell *)malloc(sizeof(struct cell));
+    newcell = malloc(sizeof(struct cell));
     if(newcell == NULL)
     {
         return(NULL);
@@ -79,7 +79,7 @@ int delList(struct cell **foot)
 {
     struct cell *prev;
     
-    printf("%d", foot -> data);
+    printf("%d", (*foot) -> data);
     prev = (*foot) -> next;
     free(*foot);
     *foot = prev;   
@@ -92,7 +92,7 @@ void showList(struct cell *foot)
     int dt;
     while(foot != NULL)
     {
-        dt = (*foot) -> data;
+        dt = foot -> data;
         printf("%d", dt);
         foot = foot -> next;
         if(foot != NULL)
