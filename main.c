@@ -40,7 +40,6 @@ int main(int argc, char *argv[])
         }              
     }
 
-    fclose(stdin);
     return 0;
 }
 
