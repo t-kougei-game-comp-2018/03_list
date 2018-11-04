@@ -23,13 +23,6 @@ int main(int argc, char *argv[])
     char str[5];
     FILE *stdin;
     struct cell *list = NULL;
-   
-    stdin = fopen("input1.txt","r"); 
-    if(stdin == NULL)
-    {
-        printf("ファイル読み込みに失敗しました。\n");        
-        return -1;
-    }
     
     while(fgets(str, sizeof(str), stdin))
     {
@@ -54,18 +47,18 @@ int main(int argc, char *argv[])
 
 struct cell *newList(int data, struct cell *next)
 {
-    struct cell *new = NULL;
+    struct cell *newcell = NULL;
     
-    new = malloc(sizeof(struct cell));
-    if(new == NULL)
+    newcell = (cell *)malloc(sizeof(struct cell));
+    if(newcell == NULL)
     {
         return(NULL);
     }
     else
     {
-        new -> next = next;
-        new -> data = data;
-        return new;
+        newcell -> next = next;
+        newcell -> data = data;
+        return newcell;
     }
 }
 
@@ -99,12 +92,16 @@ void showList(struct cell *foot)
     int dt;
     while(foot != NULL)
     {
-        dt = foot -> data;
+        dt = (*foot) -> data;
         printf("%d", dt);
         foot = foot -> next;
         if(foot != NULL)
         {
             printf(",");
+        }
+        else
+        {
+            printf("\n");
         }
     }
 }
