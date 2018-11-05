@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	while (fgets(str, sizeof(str), stdin)) {
 
 	int n = atoi(str);
-	if (n > 0 && i = 0) 
+	if (n > 0 && i == 0) 
 	{
 		array[0] = n;
 		i++;
