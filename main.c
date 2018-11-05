@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(int argc, char *argv[])
 {
-	char str[5];
+	char str[100];
 	int array[100];
 	int index = 0;
 	int i, j;
@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
                    			printf(",");
                 		}
             		}
+			
             		printf("\n");
         	}
 		else if(n == -1)
