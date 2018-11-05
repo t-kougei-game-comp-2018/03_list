@@ -11,28 +11,42 @@ int main(int argc, char *argv[])
 
 	while (fgets(str, sizeof(str), stdin)) {
 
-		int n = atoi(str);
-		if (0 <= n) {
-			array[index++] = n;
-		}
-		else if (0 == n)
-		{
-			i = index;
-			for ( ; i<= 0; i--)
-			{
-				printf("%d\n", array[i]);
-			}
-		}
-		else if (-1 == n)
-		{
-			for (; index <=  0; index--) 
-			{
-				array[index] = 0;
-			}
-		}
+	int n = atoi(str);
+	if (n > 0 && i = 0) 
+	{
+		array[0] = n;
+		i++;
 	}
-	/*0: 現在のリストに格納されている全てのデータを「,」で区切って表示する
-	-1: リストの先頭のデータを削除する。削除する際に、データの値を出力する
-		それ以外 : リストの先頭にデータを追加する*/
+	else if(n > 0 && i > 0)
+        {
+        	for(j = i; j > 0; j--)
+            	{
+               		array[j] = array[j - 1];
+            	}
+            	array[0] = n;
+            	i++;
+        }
+	else if(n == 0)
+        {
+           	for(j = 0; j < i; j++)
+            	{
+                	printf("%d",array[j])
+                	if(j < i - 1)
+                	{
+                   		printf(",");
+                	}
+            	}
+            	printf("\n");
+        }
+	else if(input == -1)
+        {
+            	printf("%d",array[0]);
+            	for(j = 0; j < i - 1; j++)
+            	{
+                	array[j] = array[j + 1];
+            	}
+            	i--;
+            	printf("\n");
+        }
 	return 0;
 }
