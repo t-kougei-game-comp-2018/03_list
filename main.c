@@ -4,8 +4,8 @@ int main(int argc, char *argv[])
 {
 	char str[100];
 	int array[100];
-	int index = 0;
-	int i, j;
+	int i = 0;
+	int j;
 
 	while (fgets(str, sizeof(str), stdin)) 
 	{
