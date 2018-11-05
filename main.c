@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main(int argc, char *argv[])
 {
 	char str[100];
@@ -9,11 +10,13 @@ int main(int argc, char *argv[])
 	while (fgets(str, sizeof(str), stdin)) 
 	{
 		int n = atoi(str);
+		
 		if (n > 0 && i == 0) 
 		{
 			array[0] = n;
 			i++;
 		}
+		
 		else if(n > 0 && i > 0)
         	{
         		for(j = i; j > 0; j--)
@@ -23,6 +26,7 @@ int main(int argc, char *argv[])
             		array[0] = n;
             		i++;
         	}
+		
 		else if(n == 0)
         	{
            		for(j = 0; j < i; j++)
@@ -36,6 +40,7 @@ int main(int argc, char *argv[])
 			
             		printf("\n");
         	}
+		
 		else if(n == -1)
         	{
             		printf("%d",array[0]);
@@ -45,7 +50,7 @@ int main(int argc, char *argv[])
             		}
             		i--;
             		printf("\n");
-        	}
-		return 0;
+		}
 	}
+	return 0;
 }
