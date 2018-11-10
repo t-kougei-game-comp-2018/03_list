@@ -5,13 +5,13 @@ int main(int argc, char *argv[])
 	char str[100];
 	int array[100];
 	int i = 0;
-	int j;
+	int j, n;
 
 	while (fgets(str, sizeof(str), stdin)) 
 	{
-		int n = atoi(str);
+		 n = atoi(str);
 		
-		if (n => 1) 
+		if (1 <= n) 
 		{
 			array[0] = n;
 			i++;
