@@ -13,19 +13,9 @@ int main(int argc, char *argv[])
 		
 		if (1 <= n) 
 		{
-			array[0] = n;
+			array[i] = n;
 			i++;
 		}
-		
-		/*else if(n > 0 && i > 0)
-        	{
-        		for(j = i; j > 0; j--)
-            		{
-               			array[j] = array[j - 1];
-            		}
-            		array[0] = n;
-            		i++;
-        	}*/
 		
 		else if(n == 0)
         	{
