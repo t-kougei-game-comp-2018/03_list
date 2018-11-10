@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
            		for(j = i - 1; j >= 0; j--)
             		{
                 		printf("%d",array[j]);
-                		if(j < 0)
+                		if(j > 0)
                 		{
                    			printf(",");
                 		}
@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 		else if(n == -1)
         	{
             		printf("%d\n",array[i-1]);
+			i--;
 		}
 	}
 	return 0;
