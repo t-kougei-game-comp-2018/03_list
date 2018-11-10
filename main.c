@@ -11,13 +11,13 @@ int main(int argc, char *argv[])
 	{
 		int n = atoi(str);
 		
-		if (n > 0 && i == 0) 
+		if (n => 1) 
 		{
 			array[0] = n;
 			i++;
 		}
 		
-		else if(n > 0 && i > 0)
+		/*else if(n > 0 && i > 0)
         	{
         		for(j = i; j > 0; j--)
             		{
@@ -25,14 +25,14 @@ int main(int argc, char *argv[])
             		}
             		array[0] = n;
             		i++;
-        	}
+        	}*/
 		
 		else if(n == 0)
         	{
-           		for(j = 0; j < i; j++)
+           		for(j = i - 1; j >= 0; j--)
             		{
                 		printf("%d",array[j]);
-                		if(j < i - 1)
+                		if(j < 0)
                 		{
                    			printf(",");
                 		}
@@ -43,13 +43,7 @@ int main(int argc, char *argv[])
 		
 		else if(n == -1)
         	{
-            		printf("%d",array[0]);
-            		for(j = 0; j < i - 1; j++)
-            		{
-                		array[j] = array[j + 1];
-            		}
-            		i--;
-            		printf("\n");
+            		printf("%d\n",array[i-1]);
 		}
 	}
 	return 0;
