@@ -38,12 +38,10 @@ char* subString(char* string, int val, char* retStr)
 
 int main(int argc, char *argv[])
 {
-	static const int TOTAL_LINE = 100;
-
 	char str[5];
 
-	char string[sizeof(str) * TOTAL_LINE] = "";
-	char buffer[sizeof(str) * TOTAL_LINE] = "";
+	char string[500] = "";
+	char buffer[500] = "";
 
 	string[0] = '\0';
 	while (fgets(str, sizeof(str), stdin)) {
