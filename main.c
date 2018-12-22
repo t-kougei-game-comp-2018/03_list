@@ -1,6 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
+
 
 void trim(char* str)
 {
@@ -25,8 +29,6 @@ char* retComma(char* string)
 
 int main(int argc, char *argv[])
 {
-	static const int TOTAL_LINE = 100;
-
 	char str[5];
 
 	char string[512];
@@ -54,11 +56,18 @@ int main(int argc, char *argv[])
 				strcpy(buffer, string);
 				string[0] = '\0';
 			}
-			//カンマが含まれている場合はカンマ以前をstringへコピーする
+			//カンマが含まれている場合はカンマ以降をstringへコピーする
 			else
 			{
-				strncpy(buffer, string, (unsigned)(rp - string));
-				strcpy(string, buffer);
+				unsigned int len = (unsigned)(rp - string);
+				int i = 0;
+				for (; i < len; i++)
+				{
+					buffer[i] = string[i];
+				}
+				buffer[i] = '\0';
+
+				strcpy(string, ++rp);
 			}
 
 			printf("%s\n", buffer);
