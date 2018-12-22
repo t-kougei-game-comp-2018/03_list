@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		//Œ»İ•\¦
 		if (atoi(str) == 0)
 		{
-			printf("%s\n\n", string);
+			printf("%s\n", string);
 		}
 		//æ“ªíœ
 		else if (atoi(str) == -1)
