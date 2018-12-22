@@ -51,14 +51,14 @@ int main(int argc, char *argv[])
 			//カンマが含まれていない場合は先頭を\0
 			if (string == rp)
 			{
-				strcpy_s(buffer, string);
+				strcpy(buffer, string);
 				string[0] = '\0';
 			}
 			//カンマが含まれている場合はカンマ以前をstringへコピーする
 			else
 			{
-				strncpy_s(buffer, string, (unsigned)(rp - string));
-				strcpy_s(string, buffer);
+				strncpy(buffer, string, (unsigned)(rp - string));
+				strcpy(string, buffer);
 			}
 
 			printf("%s\n", buffer);
@@ -71,14 +71,14 @@ int main(int argc, char *argv[])
 			//文字列が空じゃないときは str, を追加する
 			if (string[0] != '\0')
 			{
-				strcpy_s(buffer, str);
-				strcat_s(buffer, ",");
-				strcat_s(buffer, string);
-				strcpy_s(string, buffer);
+				strcpy(buffer, str);
+				strcat(buffer, ",");
+				strcat(buffer, string);
+				strcpy(string, buffer);
 			}
 			else
 			{
-				strcpy_s(string, str);
+				strcpy(string, str);
 			}
 		}
 		buffer[0] = '\0';
