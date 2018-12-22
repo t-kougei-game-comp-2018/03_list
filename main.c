@@ -23,25 +23,14 @@ char* retComma(char* string)
 	return string;
 }
 
-char* subString(char* string, int val, char* retStr)
-{
-	char *rsp = retStr;
-	char *sp = string;
-
-	for (int i = 0; i < val; i++)
-	{
-		*rsp++ = *sp++;
-	}
-
-	return retStr;
-}
-
 int main(int argc, char *argv[])
 {
+	static const int TOTAL_LINE = 100;
+
 	char str[5];
 
-	char string[500] = "";
-	char buffer[500] = "";
+	char string[512];
+	char buffer[512];
 
 	string[0] = '\0';
 	while (fgets(str, sizeof(str), stdin)) {
@@ -51,28 +40,30 @@ int main(int argc, char *argv[])
 		{
 			printf("%s\n", string);
 		}
+
 		//先頭削除(削除した際に消したものを呟く)
 		else if (atoi(str) == -1)
 		{
 
 			//カンマがどこにあるか探査
 			char *rp = retComma(string);
-
-			//カンマが含まれていなかった場合は先頭を\0
+			buffer[0] = '\0';
+			//カンマが含まれていない場合は先頭を\0
 			if (string == rp)
 			{
 				strcpy_s(buffer, string);
 				string[0] = '\0';
 			}
-			//以外の場合はカンマ以降をstringへコピーする
+			//カンマが含まれている場合はカンマ以前をstringへコピーする
 			else
 			{
-				subString(string, (unsigned)(rp - string), buffer);
-				strcpy_s(string, ++rp);
+				strncpy_s(buffer, string, (unsigned)(rp - string));
+				strcpy_s(string, buffer);
 			}
 
 			printf("%s\n", buffer);
 		}
+
 		//先頭に追加
 		else
 		{
@@ -93,5 +84,5 @@ int main(int argc, char *argv[])
 		buffer[0] = '\0';
 	}
 
-	return 0; 
+	return 0;
 }
