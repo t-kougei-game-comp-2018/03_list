@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	char string[sizeof(str) * TOTAL_LINE] = "";
 	char buffer[sizeof(str) * TOTAL_LINE] = "";
 
-	string[0] = '\0';
+	string[0] = '\0'; 
 	while (fgets(str, sizeof(str), stdin)) {
 
 		//åªç›ï\é¶
