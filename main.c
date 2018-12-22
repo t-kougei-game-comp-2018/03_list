@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <iostream>
 
 void trim(char* str)
 {
@@ -56,22 +57,24 @@ int main(int argc, char *argv[])
 		//先頭削除(削除した際に消したものを呟く)
 		else if (atoi(str) == -1)
 		{
-			//カンマが含まれていなかった場合は先頭を\0
+
+			//カンマがどこにあるか探査
 			char *rp = retComma(string);
+
+			//カンマが含まれていなかった場合は先頭を\0
 			if (string == rp)
 			{
-				printf("%s\n", string);
+				strcpy_s(buffer, string);
 				string[0] = '\0';
 			}
 			//以外の場合はカンマ以降をstringへコピーする
 			else
 			{
-				char s[5] = "";
-				printf("%s\n", subString(string, (unsigned)(rp - string), s));
+				subString(string, (unsigned)(rp - string), buffer);
 				strcpy_s(string, ++rp);
 			}
 
-
+			printf("%s\n", buffer);
 		}
 		//先頭に追加
 		else
