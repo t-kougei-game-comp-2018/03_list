@@ -1,9 +1,15 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 
+typedef struct t {
+	struct node *prev;
+	struct node *next;
+
+	int value;
+}node;
 
 
+//改行コードの削除
 void trim(char* str)
 {
 	char *p;
@@ -13,89 +19,126 @@ void trim(char* str)
 	}
 }
 
-char* retComma(char* string)
+
+//新しいノードを作る
+node *createNode(int val)
 {
-	char *p;
-	p = strchr(string, ',');
-	if (p != NULL) {
-		//カンマがあるポインタを返却
-		return p;
-	}
-	//カンマ含まれてない場合は文字列先頭ポインタを返却
-	return string;
+	node *newNode;
+	newNode = (node *)malloc(sizeof(node));
+	newNode->next = NULL;
+	newNode->prev = NULL;
+	newNode->value = val;
+
+
+	return newNode;
 }
+
+
+//targetの上にnewを追加する
+void addTop(node *target, node *new)
+{
+	target->prev = new;
+	new->next = target;
+}
+
+
+//ノードを削除する
+void delNode(node *delNode)
+{
+
+	node *prev = delNode->prev;	//自分の前
+	node *next = delNode->next;	//自分の次
+
+
+	if (prev != NULL) prev->next = delNode->next; //前の次を 自分の次にする
+	if (next != NULL) next->prev = delNode->prev; //次の前を 自分の前にする
+
+
+	printf("%d\n", delNode->value);	//削除するものを呟く
+
+	free(delNode);	//解放
+}
+
+
+//一番最初を消す
+node *delTop(node *top)
+{
+	node *rp = top->next;
+	delNode(top);
+
+	return rp;
+}
+
+
+//末端まで表示する
+void showNode(node *top)
+{
+	node *np = top;
+	int i = 0;
+	while (1)
+	{
+		if (np == NULL) break;
+
+		if (i == 0)
+		{
+			printf("%d", np->value);
+			i++;
+		}
+		else
+		{
+			printf(",%d", np->value);
+		}
+
+		if (np->next == NULL) break;
+		np = np->next;
+	}
+	printf("\n");
+}
+
+
+
 
 int main(int argc, char *argv[])
 {
-	char str[5];
+	node *top = NULL; //先頭把握用
 
-	char string[512];
-	char buffer[512];
+	char str[7];
 
-	string[0] = '\0';
-	while (fgets(str, sizeof(str), stdin)) {
+	while (fgets(str, sizeof(str), stdin))
+	{
+		trim(str);
+		int number = atoi(str);
 
-		//-----------------------------------------------------
-		//	表示
-		//-----------------------------------------------------
-		if (atoi(str) == 0)
+
+		//先頭削除
+		if (number == -1)
 		{
-			printf("%s\n", string);
+			top = delTop(top);
 		}
 
-		//-----------------------------------------------------
-		//	削除
-		//-----------------------------------------------------
-		else if (atoi(str) == -1)
+		//現リストを表示
+		else if (number == 0)
 		{
-
-			//カンマがどこにあるか探査
-			char *rp = retComma(string);
-			buffer[0] = '\0';
-			//カンマが含まれていない場合は先頭を\0
-			if (string == rp)
-			{
-				strcpy(buffer, string);
-				string[0] = '\0';
-			}
-			//カンマが含まれている場合はカンマ以降をstringへコピーする
-			else
-			{
-				unsigned int len = (unsigned)(rp - string);
-				int i = 0;
-				for (; i < len; i++)
-				{
-					buffer[i] = string[i];
-				}
-				buffer[i] = '\0';
-
-				strcpy(string, ++rp);
-			}
-
-			printf("%s\n", buffer);
+			showNode(top);
 		}
 
-		//-----------------------------------------------------
-		//	追加
-		//-----------------------------------------------------
+		//追加
 		else
 		{
-			trim(str);
-			//文字列が空じゃないときは str, を追加する
-			if (string[0] != '\0')
+
+			if (top == NULL)
 			{
-				strcpy(buffer, str);
-				strcat(buffer, ",");
-				strcat(buffer, string);
-				strcpy(string, buffer);
+				top = createNode(number);
 			}
 			else
 			{
-				strcpy(string, str);
+				node *new = createNode(number);
+				addTop(top, new);
+				top = new;
 			}
 		}
-		buffer[0] = '\0';
 	}
+
 
 	return 0;
 }
